@@ -1,0 +1,180 @@
+Name:Joy Masemola
+Department: Cohort 17 Data Sciences
+Date:1 November 2019
+Linux tasks
+
+**************************************************
+Starting directory:/home/joyous
+
+Task 1 :Basic_Task
+
+1.ls command and enter (screenshot attached below)
+ls meaning:this command lists all the files and dirctories.files are written in white and directories in blue.
+joyous@joyous-Mecer-X102:~$ ls
+
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+
+
+2.pwd command and enter(screenshot ATTACHED BELOW)
+pwd meaning:prints the name of the current or working directory
+joyous@joyous-Mecer-X102:~$ pwd
+/home/joyous
+
+3.mkdir workspace the cd workspace(screenshot)
+joyous@joyous-Mecer-X102:~$ mkdir workspace
+joyous@joyous-Mecer-X102:~/workspace$ ls
+
+4.ls typed in and then enter(screenshot attached below)
+joyous@joyous-Mecer-X102:~/workspace$ ls
+
+5.Make a new file called README.md (you can use the touch command to do this)
+joyous@joyous-Mecer-X102:~/workspace$ touch README.md
+
+6.cp README.md CHANGELOG(screen shot attached)
+joyous@joyous-Mecer-X102:~/workspace$ cp README.md CHANGELOG.md
+joyous@joyous-Mecer-X102:~/workspace$ ls
+CHANGELOG.md  README.md
+
+***********************************************************************************************
+Task 2: Absolute and Relative Paths
+
+The starting  is /home/joyous.
+
+1.Command 1: cd ..        //Puts us in the home directory.
+2.Command 2: touch exercise.md 
+
+Desktop    Downloads    Music     Public     Videos
+Documents  exercise.md  Pictures  Templates  workspace
+ 
+3.Command 3: mv exercise.md /tmp     //Moves file to /tmp
+joyous@joyous-Mecer-X102:/tmp$ ls
+config-err-xlXvEY
+exercise.md
+
+4.Command 4: rm /tmp/exercise.md        //deletes  file
+ without having to change directories (using absolute pathname)
+joyous@joyous-Mecer-X102:/tmp$ ls
+config-err-xlXvEY
+
+************************************************************************
+Task 3: Cat Commands
+
+Working from the /home directory.
+
+# 1:Create 3 files namely umuzi.md, recruits.md and cohort.md.
+
+joyous@joyous-Mecer-X102:~$ touch umuzi.md, recruit.md, cohort.md
+joyous@joyous-Mecer-X102:~$ ls
+cohort.md  Documents  Music     Public       Templates  Videos
+Desktop    Downloads  Pictures  recruit.md,  umuzi.md,  workspace
+
+# 2: manually add content to each file.
+# 3: cat *.md          // Displays content in all .md files
+
+joyous@joyous-Mecer-X102:~$ cat umuzi.md, recruit.md, cohort.md
+umuzi is a great enviroment
+i am a new recruit at umuzi, cohort 17.
+i am cohort 17 and it is really great to be here.
+
+# 4:  cat umuzi.md, recruit.md, cohort.md > summary.md
+
+joyous@joyous-Mecer-X102:~$  cat umuzi.md, recruit.md, cohort.md > summary.md
+joyous@joyous-Mecer-X102:~$ cat summary.md
+umuzi is a great enviroment
+i am a new recruit at umuzi, cohort 17.
+i am cohort 17 and it is really great to be here.
+
+# 5: echo "The End" >> summary.md
+
+joyous@joyous-Mecer-X102:~$ echo "The End" >> summary.md
+joyous@joyous-Mecer-X102:~$ cat summary.md
+umuzi is a great enviroment
+i am a new recruit at umuzi, cohort 17.
+i am cohort 17 and it is really great to be here.
+The End
+
+
+***************************************************************************************************************************
+Task 4: The locate command
+
+# 1: find / -name umuzi*
+
+joyous@joyous-Mecer-X102:~$ find / -name umuzi*
+/home/joyous/umuzi.md,
+
+# 2: find / -name umuzi* > search_result.md
+
+joyous@joyous-Mecer-X102:~$ ls
+cohort.md  Downloads  Public            summary.md  Videos
+Desktop    Music      recruit.md,       Templates   workspace
+
+Documents  Pictures   search_result.md  umuzi.md,
+
+joyous@joyous-Mecer-X102:~$ cat search_result.md
+/home/joyous/umuzi.md,
+
+
+********************************************************************************************************************************
+Task 5:
+
+1.Command 1: cd Documents 
+joyous@joyous-Mecer-X102:~$ cd Documents
+
+2.Command 2: mkdir myDocument
+joyous@joyous-Mecer-X102:~/Documents$ mkdir myDocument
+joyous@joyous-Mecer-X102:~/Documents$ cd myDocument
+joyous@joyous-Mecer-X102:~/Documents/myDocument$ touch pad.md
+joyous@joyous-Mecer-X102:~/Documents/myDocument$ ls
+pad.md
+
+3.Command 3: cd ..
+
+4.Command 4: cd Desktop
+joyous@joyous-Mecer-X102:~$ cd Desktop
+
+5.Command 5: mkdir Work
+joyous@joyous-Mecer-X102:~/Desktop$ mkdir Work
+
+
+6.Command 6: cd Work
+
+7.Command 7: cp /home/joyous/Documents/pad.md ./pad_copy.md
+joyous@joyous-Mecer-X102:~/Desktop/Work$ cp /home/joyous/Documents/myDocument/pad.md ./pad_copy.md
+
+8.Command 8: locate updatedb
+9.Command 9: cd -
+10.Command 10: find /home/joyous/Desktop/ -name pad*
+joyous@joyous-Mecer-X102:~$ find /home/joyous/Desktop/ -name pad*
+/home/joyous/Desktop/Work/pad_copy.md
+
+
+*****************************************************************************************************************************
+
+Task 6:
+
+# 1: locate *.pdf
+joyous@joyous-Mecer-X102:~$ locate  *.pdf
+
+
+# 2 - Command 1: sudo su and then type password
+    - Command 2: find . -iname '*.pdf' -exec cp {} work \;
+# 3: find / -mtime -1 -print
+*********************************************************************************************************************************8
+Task 7: Text editor
+
+# 1: nano myBio.md
+# 2: Ctrl + O and then click Enter. Ctrl + X
+# 3: mv myBio.md /home/joyous/my_files/
+joyous@joyous-Mecer-X102:~$  mv myBio.md /home/joyous/my_files/ 
+joyous@joyous-Mecer-X102:~$ cd my_files
+joyous@joyous-Mecer-X102:~/my_files$ ls
+myBio.md
+
+Github link:
+https://github.com/jbmasemza/git-basic-exercises.git
+ 
+
+
+
+
+
